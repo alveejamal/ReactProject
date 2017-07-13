@@ -2,11 +2,17 @@ import React from "react";
 
 export default class Header extends React.Component{
 
-	render(){
+	handleEvent(e){
+		console.log(e.target.value)
+		this.props.changeTitle(e.target.value);
+	}
 
+	render(){
 		return(
 			<h1>
-				Hi!from header!!
+							 	{this.props.title}
+							 	<br/>
+				<input onChange={this.handleEvent.bind(this)}/>
 			</h1>
 			);
 	}
